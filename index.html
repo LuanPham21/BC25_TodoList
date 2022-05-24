@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <!-- Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+      integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="card__header">
+        <img src="./img/X2oObC4.png" />
+      </div>
+      <!-- <h2>hello!</h2> -->
+      <div class="card__body">
+        <div class="filter-btn">
+          <a id="one" href="#"><i class="fa fa-check-circle"></i></a>
+          <a id="two" href="#"><i class="fa fa-sort-alpha-down"></i></a>
+          <a id="three" href="#"><i class="fa fa-sort-alpha-up"></i></a>
+          <a id="all" href="#"><i class="fa fa-clock"></i></a>
+          <span class="toggle-btn">
+            <i class="fa fa-filter"></i>
+            <i class="fa fa-times"></i>
+          </span>
+        </div>
+        <div class="card__content">
+          <div class="card__title">
+            <h2>My Tasks</h2>
+            <p>September 9,2020</p>
+          </div>
+          <div class="card__add">
+            <input
+              id="newTask"
+              type="text"
+              placeholder="Enter an activity..."
+            />
+            <button id="addItem">
+              <i class="fa fa-plus"></i>
+            </button>
+          </div>
+          <div class="card__todo">
+            <!-- Uncompleted tasks -->
+            <ul class="todo" id="todo">
+              <!-- <li>
+                few
+                <div class="buttons">
+                  <button><i class="fas fa-trash-alt remove"></i></button>
+                </div>
+              </li> -->
+            </ul>
+            <!-- Completed tasks -->
+            <ul class="todo" id="completed"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(function () {
+        $(".toggle-btn").click(function () {
+          $(".filter-btn").toggleClass("open");
+        });
+
+        $(".filter-btn a").click(function () {
+          $(".filter-btn").removeClass("open");
+        });
+      });
+    </script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="./js/service.js"></script>
+    <script src="./js/todo.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
